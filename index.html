@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2S - Votre Expert en Technologie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Fond léger */
+            color: #333333; /* Texte gris foncé */
+        }
+        header {
+            background: #000000; /* Noir */
+            color: #ffffff; /* Blanc */
+            padding: 20px;
+            text-align: center;
+        }
+        .logo {
+            max-width: 150px; /* Largeur maximale du logo */
+            margin: 10px 0;
+        }
+        nav {
+            margin: 10px 0;
+        }
+        nav .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        nav .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: #ff0000; /* Rouge pur */
+            color: white;
+            border: none;
+            border-radius: 5px 5px 0 0;
+            transition: background 0.3s, transform 0.2s; /* Ajout de transition */
+            font-size: 18px; /* Taille de texte des onglets */
+            font-weight: bold; /* Gras */
+            margin: 0 5px; /* Ajout d'espace entre les onglets */
+        }
+        nav .tab:hover {
+            background: #cc0000; /* Rouge foncé au survol */
+            transform: translateY(-2px); /* Léger déplacement au survol */
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            margin-top: -1px;
+            border: 1px solid #000000; /* Noir */
+            border-radius: 0 0 5px 5px;
+            background: white; /* Blanc */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère */
+        }
+        .active {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #000000; /* Noir */
+            color: #ffffff; /* Blanc */
+            font-size: 14px; /* Taille du texte du footer */
+        }
+        .article {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        .article:last-child {
+            border-bottom: none;
+        }
+        .btn {
+            background-color: #ff0000; /* Rouge pur */
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px; /* Taille de texte des boutons */
+            transition: background 0.3s, transform 0.2s; /* Ajout de transition */
+        }
+        .btn:hover {
+            background-color: #cc0000; /* Rouge foncé au survol */
+            transform: translateY(-2px); /* Léger déplacement au survol */
+        }
+        h2 {
+            font-family: 'Oswald', sans-serif; /* Nouvelle police pour les sous-titres */
+            font-size: 22px; /* Taille des sous-titres */
+            color: #000000; /* Couleur noire */
+            font-weight: bold; /* Gras */
+            margin-bottom: 10px; /* Espacement en bas */
+        }
+        h3 {
+            font-family: 'Oswald', sans-serif; /* Nouvelle police pour les titres d'articles */
+            font-size: 20px; /* Taille des titres d'articles */
+            color: #ff0000; /* Couleur rouge pour les titres d'articles */
+            font-weight: bold; /* Gras */
+        }
+        p {
+            font-size: 16px; /* Taille de texte des paragraphes */
+            line-height: 1.5; /* Interligne pour lisibilité */
+        }
+        .icon {
+            font-size: 24px; /* Taille des icônes */
+            margin-right: 10px; /* Espace entre l'icône et le texte */
+            color: #ff0000; /* Couleur rouge pour les icônes */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="images/logo-2s-tech.png" alt="Logo 2S TECH" class="logo"> <!-- Remplace par le chemin de ton logo -->
+    <h1>Bienvenue chez 2S</h1> <!-- Texte conservé -->
+</header>
+
+<nav>
+    <div class="tabs">
+        <button class="tab" onclick="showTab('boutique')">Boutique</button>
+        <button class="tab" onclick="showTab('reparation')">Réparation</button>
+        <button class="tab" onclick="showTab('telephones')">Téléphones</button>
+        <button class="tab" onclick="showTab('articles')">Articles</button>
+    </div>
+</nav>
+
+<div id="boutique" class="tab-content">
+    <h2><i class="fas fa-shopping-cart icon"></i>Boutique d'Achat et de Vente</h2>
+    <p>Découvrez notre sélection de produits informatiques et électroniques à des prix compétitifs. Que vous souhaitiez acheter ou vendre, nous sommes là pour vous aider !</p>
+    <a href="https://whatsapp.com/channel/0029VahSUytLNSa6KCVxuK45" class="btn" target="_blank">Voir les articles</a>
+</div>
+
+<div id="reparation" class="tab-content">
+    <h2><i class="fas fa-tools icon"></i>Réparation et Maintenance</h2>
+    <p>Nos services incluent la réparation de PC, l'optimisation des performances, et la mise en place de réseaux. Contactez-nous pour un devis gratuit !</p>
+    <a href="https://wa.me/22870833390" class="btn" target="_blank">Demander un devis</a>
+</div>
+
+<div id="telephones" class="tab-content">
+    <h2><i class="fas fa-mobile-alt icon"></i>Réparation de Téléphones Portables</h2>
+    <p>Nous réparons tous les types de téléphones, y compris le flash et le bypass des iPhones. Faites confiance à notre expertise !</p>
+    <a href="https://wa.me/22870833390" class="btn" target="_blank">En savoir plus</a>
+</div>
+
+<div id="articles" class="tab-content">
+    <h2><i class="fas fa-laptop icon"></i>Articles Informatique</h2>
+    <div class="article">
+        <h3>Ordinateur Portable</h3>
+        <p>Un ordinateur portable puissant et élégant, idéal pour les professionnels en déplacement.</p>
+        <a href="#" class="btn">Acheter maintenant</a>
+    </div>
+    <div class="article">
+        <h3>Smartphone</h3>
+        <p>Un smartphone avec des performances impressionnantes et une excellente autonomie.</p>
+        <a href="#" class="btn">Acheter maintenant</a>
+    </div>
+    <div class="article">
+        <h3>Écouteurs Bluetooth</h3>
+        <p>Qualité sonore exceptionnelle avec réduction de bruit avancée.</p>
+        <a href="#" class="btn">Acheter maintenant</a>
+    </div>
+    <div class="article">
+        <h3>PC de Bureau</h3>
+        <p>Un PC polyvalent pour le travail et les loisirs.</p>
+        <a href="#" class="btn">Acheter maintenant</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 2S. Tous droits réservés.</p>
+    <p>Contactez-nous : <a href="tel:+22870833390">70833390</a> | <a href="mailto:msouleman28@gmail.com">msouleman28@gmail.com</a></p>
+    <p>Disponible sur WhatsApp : <a href="https://wa.me/22870833390">Cliquez ici</a></p>
+</footer>
+
+<script>
+    // Affiche le premier onglet par défaut
+    document.addEventListener("DOMContentLoaded", function() {
+        showTab('boutique');
+    });
+
+    function showTab(tabId) {
+        const tabs = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => {
+            tab.style.display = 'none'; // Masquer tous les onglets
+        });
+        document.getElementById(tabId).style.display = 'block'; // Afficher l'onglet sélectionné
+    }
+</script>
+
+</body>
+</html>
