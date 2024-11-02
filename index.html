@@ -85,6 +85,8 @@
             font-weight: bold;
             font-size: 16px; /* Taille de texte des boutons */
             transition: background 0.3s, transform 0.2s; /* Ajout de transition */
+            display: inline-block; /* Bouton comme bloc en ligne */
+            width: auto; /* Largeur par défaut */
         }
         .btn:hover {
             background-color: #cc0000; /* Rouge foncé au survol */
@@ -111,6 +113,29 @@
             font-size: 24px; /* Taille des icônes */
             margin-right: 10px; /* Espace entre l'icône et le texte */
             color: #ff0000; /* Couleur rouge pour les icônes */
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px;
+            }
+            .logo {
+                max-width: 100px; /* Logo plus petit sur mobile */
+            }
+            nav .tabs {
+                flex-direction: column; /* Onglets en colonne */
+                align-items: center; /* Centrer les onglets */
+            }
+            nav .tab {
+                margin: 5px 0; /* Espace entre les onglets en colonne */
+                width: 100%; /* Onglets prennent toute la largeur */
+            }
+            .tab-content {
+                padding: 15px; /* Réduire le padding pour mobile */
+            }
+            .btn {
+                width: 100%; /* Boutons prennent toute la largeur sur mobile */
+            }
         }
     </style>
 </head>
