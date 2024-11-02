@@ -12,51 +12,52 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4; /* Fond léger */
-            color: #333333; /* Texte gris foncé */
+            background-color: #f4f4f4;
+            color: #333;
         }
         header {
-            background: #000000; /* Noir */
-            color: #ffffff; /* Blanc */
+            background: #000;
+            color: #fff;
             padding: 20px;
             text-align: center;
         }
         .logo {
-            max-width: 150px; /* Largeur maximale du logo */
+            max-width: 150px;
             margin: 10px 0;
         }
         nav {
             margin: 10px 0;
         }
-        nav .tabs {
+        .tabs {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
+            flex-wrap: wrap; /* Pour permettre aux onglets de s'enrouler sur petits écrans */
+            margin-top: 10px;
         }
-        nav .tab {
-            padding: 10px 20px;
+        .tab {
+            padding: 10px 15px;
             cursor: pointer;
-            background: #ff0000; /* Rouge pur */
+            background: #ff0000;
             color: white;
             border: none;
-            border-radius: 5px 5px 0 0;
-            transition: background 0.3s, transform 0.2s; /* Ajout de transition */
-            font-size: 18px; /* Taille de texte des onglets */
-            font-weight: bold; /* Gras */
-            margin: 0 5px; /* Ajout d'espace entre les onglets */
+            border-radius: 5px;
+            margin: 5px; /* Espacement entre les onglets */
+            flex: 1; /* Onglets occupent une largeur égale */
+            min-width: 120px; /* Largeur minimale */
+            text-align: center; /* Centrer le texte */
+            transition: background 0.3s;
         }
-        nav .tab:hover {
-            background: #cc0000; /* Rouge foncé au survol */
-            transform: translateY(-2px); /* Léger déplacement au survol */
+        .tab:hover {
+            background: #cc0000;
         }
         .tab-content {
             display: none;
             padding: 20px;
-            margin-top: -1px;
-            border: 1px solid #000000; /* Noir */
-            border-radius: 0 0 5px 5px;
-            background: white; /* Blanc */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère */
+            margin-top: 10px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .active {
             display: block;
@@ -64,9 +65,9 @@
         footer {
             text-align: center;
             padding: 10px;
-            background: #000000; /* Noir */
-            color: #ffffff; /* Blanc */
-            font-size: 14px; /* Taille du texte du footer */
+            background: #000;
+            color: #fff;
+            font-size: 14px;
         }
         .article {
             margin-bottom: 20px;
@@ -77,42 +78,40 @@
             border-bottom: none;
         }
         .btn {
-            background-color: #ff0000; /* Rouge pur */
+            background-color: #ff0000;
             color: white;
-            padding: 10px 15px;
+            padding: 10px;
             text-decoration: none;
             border-radius: 5px;
-            font-weight: bold;
-            font-size: 16px; /* Taille de texte des boutons */
-            transition: background 0.3s, transform 0.2s; /* Ajout de transition */
-            display: inline-block; /* Bouton comme bloc en ligne */
-            width: auto; /* Largeur par défaut */
+            display: inline-block;
+            margin-top: 10px; /* Espacement au-dessus du bouton */
+            transition: background 0.3s;
+            width: 100%; /* Boutons prennent toute la largeur */
         }
         .btn:hover {
-            background-color: #cc0000; /* Rouge foncé au survol */
-            transform: translateY(-2px); /* Léger déplacement au survol */
+            background-color: #cc0000;
         }
         h2 {
-            font-family: 'Oswald', sans-serif; /* Nouvelle police pour les sous-titres */
-            font-size: 22px; /* Taille des sous-titres */
-            color: #000000; /* Couleur noire */
-            font-weight: bold; /* Gras */
-            margin-bottom: 10px; /* Espacement en bas */
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            color: #000;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
         h3 {
-            font-family: 'Oswald', sans-serif; /* Nouvelle police pour les titres d'articles */
-            font-size: 20px; /* Taille des titres d'articles */
-            color: #ff0000; /* Couleur rouge pour les titres d'articles */
-            font-weight: bold; /* Gras */
+            font-family: 'Oswald', sans-serif;
+            font-size: 20px;
+            color: #ff0000;
+            font-weight: bold;
         }
         p {
-            font-size: 16px; /* Taille de texte des paragraphes */
-            line-height: 1.5; /* Interligne pour lisibilité */
+            font-size: 16px;
+            line-height: 1.5;
         }
         .icon {
-            font-size: 24px; /* Taille des icônes */
-            margin-right: 10px; /* Espace entre l'icône et le texte */
-            color: #ff0000; /* Couleur rouge pour les icônes */
+            font-size: 24px;
+            margin-right: 10px;
+            color: #ff0000;
         }
 
         @media (max-width: 768px) {
@@ -120,21 +119,14 @@
                 padding: 15px;
             }
             .logo {
-                max-width: 100px; /* Logo plus petit sur mobile */
+                max-width: 100px;
             }
-            nav .tabs {
-                flex-direction: column; /* Onglets en colonne */
-                align-items: center; /* Centrer les onglets */
-            }
-            nav .tab {
-                margin: 5px 0; /* Espace entre les onglets en colonne */
-                width: 100%; /* Onglets prennent toute la largeur */
+            .tab {
+                margin: 5px 0; /* Espacement entre les onglets en colonne */
+                flex: 1 1 auto; /* Permettre aux onglets de s'ajuster */
             }
             .tab-content {
-                padding: 15px; /* Réduire le padding pour mobile */
-            }
-            .btn {
-                width: 100%; /* Boutons prennent toute la largeur sur mobile */
+                padding: 15px;
             }
         }
     </style>
@@ -143,7 +135,7 @@
 
 <header>
     <img src="images/logo-2s-tech.png" alt="Logo 2S TECH" class="logo"> <!-- Remplace par le chemin de ton logo -->
-    <h1>Bienvenue chez 2S</h1> <!-- Texte conservé -->
+    <h1>Bienvenue chez 2S</h1>
 </header>
 
 <nav>
@@ -204,9 +196,8 @@
 </footer>
 
 <script>
-    // Affiche le premier onglet par défaut
     document.addEventListener("DOMContentLoaded", function() {
-        showTab('boutique'); // Assurez-vous que le premier onglet affiché est 'boutique'
+        showTab('boutique'); // Afficher l'onglet boutique par défaut
     });
 
     function showTab(tabId) {
