@@ -6,7 +6,6 @@
   <title>2S Business – Achat • Vente • Réparation</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-
   <style>
     :root{
       --primary:#ff0000;
@@ -19,7 +18,6 @@
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Roboto',sans-serif}
 
-    /* HEADER STICKY */
     .topbar{
       position:sticky;top:0;z-index:1000;
       background:var(--black);color:var(--white);
@@ -30,63 +28,14 @@
     .brand img{height:44px}
     .brand .name{font-family:'Oswald',sans-serif;font-size:20px;letter-spacing:.5px}
 
-    .nav{
-      margin-left:auto;display:flex;gap:14px;align-items:center;flex-wrap:wrap
-    }
-    .nav a{
-      color:var(--white);text-decoration:none;font-weight:700;font-size:14px
-    }
+    .nav{margin-left:auto;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .nav a{color:var(--white);text-decoration:none;font-weight:700;font-size:14px}
     .nav a:hover{color:var(--primary)}
 
-    /* SEARCH + FILTERS BAR */
-    .searchbar{
-      background:#111;color:var(--white);
-      display:grid;grid-template-columns:1fr 180px 140px;gap:10px;
-      padding:12px 16px;border-top:1px solid #1a1a1a
-    }
-    .searchbar input,
-    .searchbar select,
-    .searchbar button{
-      border:1px solid #222;background:#0d0d0d;color:var(--white);
-      padding:10px;border-radius:8px;font-size:14px
-    }
-    .searchbar input::placeholder{color:#aaa}
-    .searchbar button{background:var(--primary);border-color:var(--primary);font-weight:700;cursor:pointer}
-    .searchbar button:hover{background:var(--primary-dark)}
-
-    /* HERO SLIDER */
-    .hero{position:relative;overflow:hidden;background:#000}
-    .slides{display:flex;transition:transform .6s ease}
-    .slide{
-      min-width:100%;height:320px;display:flex;align-items:center;justify-content:center;
-      color:#fff;text-align:center;position:relative;background:#000
-    }
-    .slide::after{
-      content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.55),rgba(0,0,0,.15))
-    }
-    .slide-content{
-      position:relative;z-index:2;max-width:760px;padding:0 16px
-    }
-    .slide h1{font-family:'Oswald',sans-serif;font-size:38px;margin:0 0 8px}
-    .slide p{margin:0 0 16px;font-size:16px}
-    .btn{display:inline-block;background:var(--primary);color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:700}
-    .btn:hover{background:var(--primary-dark)}
-    .slider-controls{
-      position:absolute;inset:auto 0 12px 0;display:flex;justify-content:center;gap:8px;z-index:3
-    }
-    .dot{width:10px;height:10px;border-radius:50%;background:#888;cursor:pointer;border:none}
-    .dot.active{background:var(--primary)}
-
-    /* PRODUCTS GRID */
     .section{max-width:1200px;margin:28px auto;padding:0 16px}
     .section h2{font-family:'Oswald',sans-serif;margin:0 0 14px;font-size:26px}
-    .grid{
-      display:grid;gap:18px;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr))
-    }
-    .card{
-      background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06);overflow:hidden;display:flex;flex-direction:column
-    }
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .card{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06);overflow:hidden;display:flex;flex-direction:column}
     .card img{width:100%;height:170px;object-fit:cover}
     .card .info{padding:12px}
     .card h3{margin:4px 0 6px;font-size:18px;color:var(--primary)}
@@ -94,265 +43,97 @@
     .desc{margin:0 0 10px;color:#555;font-size:14px}
     .card .actions{margin-top:auto;padding:12px;border-top:1px solid #eee;display:flex;gap:10px}
     .card .actions a{flex:1;text-align:center}
+    .btn{display:inline-block;background:var(--primary);color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:700}
+    .btn:hover{background:var(--primary-dark)}
 
-    /* SERVICES */
-    .services{background:#fff;border-radius:12px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-    .service{
-      background:#fafafa;border:1px solid #eee;border-radius:12px;padding:16px;text-align:center
-    }
-    .service i{font-size:36px;color:var(--primary);margin-bottom:8px}
-
-    /* FOOTER */
     footer{
       background:var(--black);color:#ccc;margin-top:28px;padding:18px 16px;text-align:center
     }
     footer a{color:var(--primary);text-decoration:none}
     footer a:hover{color:var(--primary-dark)}
 
-    /* WHATSAPP FLOAT */
     .wa-float{
       position:fixed;right:14px;bottom:14px;z-index:999;
       background:#25D366;color:#fff;border-radius:50%;width:56px;height:56px;
       display:flex;align-items:center;justify-content:center;text-decoration:none;
       box-shadow:0 6px 18px rgba(0,0,0,.2);font-size:26px
     }
-
-    /* RESPONSIVE */
-    @media (max-width:900px){
-      .searchbar{grid-template-columns:1fr 1fr auto}
-    }
-    @media (max-width:600px){
-      .nav{display:none} /* (tu peux remettre si tu veux un burger menu) */
-      .slide{height:280px}
-      .slide h1{font-size:28px}
-    }
   </style>
 </head>
 <body>
 
-  <!-- TOPBAR -->
-  <header class="topbar">
-    <div class="brand">
-      <!-- mets ton vrai logo dans /images/ -->
-      <img src="images/logo-2s-tech.png" alt="2S Business">
-      <div class="name">2S BUSINESS</div>
-    </div>
-    <nav class="nav">
-      <a href="#hero">Accueil</a>
-      <a href="#products">Boutique</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <!-- SEARCH + FILTERS -->
-  <div class="searchbar">
-    <input id="searchInput" type="text" placeholder="Rechercher un produit… (ex: iPhone, Écouteurs)" />
-    <select id="categoryFilter" aria-label="Catégorie">
-      <option value="all">Toutes catégories</option>
-      <option value="phones">Téléphones</option>
-      <option value="laptops">Ordinateurs</option>
-      <option value="audio">Audio</option>
-      <option value="desktop">PC Bureau</option>
-      <option value="accessories">Accessoires</option>
-    </select>
-    <button id="clearFilters" type="button" title="Réinitialiser">Réinitialiser</button>
+<header class="topbar">
+  <div class="brand">
+    <img src="images/logo-2s-tech.png" alt="2S Business">
+    <div class="name">2S BUSINESS</div>
   </div>
+  <nav class="nav">
+    <a href="#products">Boutique</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <!-- HERO SLIDER -->
-  <section id="hero" class="hero">
-    <div class="slides" id="slides">
-      <div class="slide" style="background:url('https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;">
-        <div class="slide-content">
-          <h1>Vente • Réparation • Accessoires</h1>
-          <p>Tout pour vos téléphones et ordinateurs chez <b>2S Business</b> (qualité, rapidité, garantie).</p>
-          <a class="btn" href="#products">Voir la boutique</a>
-        </div>
+<section id="products" class="section">
+  <h2>Nos Produits</h2>
+  <div class="grid">
+
+    <article class="card">
+      <img src="images/smartphone.jpg" alt="Smartphone">
+      <div class="info">
+        <h3>Smartphone</h3>
+        <p class="price">85 000 FCFA</p>
+        <p class="desc">Performance, autonomie et garantie 2S.</p>
       </div>
-      <div class="slide" style="background:url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;">
-        <div class="slide-content">
-          <h1>Réparation Express</h1>
-          <p>iPhone, Android, PC : diagnostic rapide et devis gratuit.</p>
-          <a class="btn" href="https://wa.me/22870833390" target="_blank" rel="noopener">Demander un devis WhatsApp</a>
-        </div>
+      <div class="actions">
+        <a class="btn" href="https://wa.me/22870833390?text=Je%20veux%20acheter%20un%20smartphone%20chez%202S" target="_blank">Acheter WhatsApp</a>
+        <a class="btn" href="#contact">Détails</a>
       </div>
-      <div class="slide" style="background:url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;">
-        <div class="slide-content">
-          <h1>Promos & Nouveautés</h1>
-          <p>Suivez nos offres dans la boutique 2S (stock limité).</p>
-          <a class="btn" href="https://whatsapp.com/channel/0029VahSUytLNSa6KCVxuK45" target="_blank" rel="noopener">Voir le canal WhatsApp</a>
-        </div>
+    </article>
+
+    <article class="card">
+      <img src="images/laptop.jpg" alt="Ordinateur Portable">
+      <div class="info">
+        <h3>Ordinateur Portable</h3>
+        <p class="price">150 000 FCFA</p>
+        <p class="desc">SSD rapide, prêt pour le travail pro.</p>
       </div>
-    </div>
-    <div class="slider-controls" id="dots"></div>
-  </section>
+      <div class="actions">
+        <a class="btn" href="https://wa.me/22870833390?text=Int%C3%A9ress%C3%A9%20par%20un%20ordinateur%20portable%20chez%202S" target="_blank">Acheter WhatsApp</a>
+        <a class="btn" href="#contact">Détails</a>
+      </div>
+    </article>
 
-  <!-- PRODUCTS -->
-  <section id="products" class="section">
-    <h2>Nos Produits</h2>
-    <div class="grid" id="productGrid">
+  </div>
+</section>
 
-      <!-- Phone -->
-      <article class="card" data-category="phones" data-keywords="smartphone iphone android 128go">
-        <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=1200&auto=format&fit=crop" alt="Smartphone">
-        <div class="info">
-          <h3>Smartphone</h3>
-          <p class="price">À partir de 85 000 FCFA</p>
-          <p class="desc">Performance, autonomie et garantie 2S.</p>
-        </div>
-        <div class="actions">
-          <a class="btn" href="https://wa.me/22870833390?text=Je%20veux%20acheter%20un%20smartphone%20chez%202S" target="_blank" rel="noopener">Acheter WhatsApp</a>
-          <a class="btn" href="#contact">Détails</a>
-        </div>
-      </article>
-
-      <!-- Laptop -->
-      <article class="card" data-category="laptops" data-keywords="pc portable laptop ssd ram">
-        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop" alt="Ordinateur Portable">
-        <div class="info">
-          <h3>Ordinateur Portable</h3>
-          <p class="price">À partir de 150 000 FCFA</p>
-          <p class="desc">SSD rapide, prêt pour le travail pro.</p>
-        </div>
-        <div class="actions">
-          <a class="btn" href="https://wa.me/22870833390?text=Int%C3%A9ress%C3%A9%20par%20un%20ordinateur%20portable%20chez%202S" target="_blank" rel="noopener">Acheter WhatsApp</a>
-          <a class="btn" href="#contact">Détails</a>
-        </div>
-      </article>
-
-      <!-- Earbuds -->
-      <article class="card" data-category="audio" data-keywords="ecouteurs bluetooth audio reduction de bruit">
-        <img src="https://images.unsplash.com/photo-1518443952243-9e5b05339460?q=80&w=1200&auto=format&fit=crop" alt="Écouteurs Bluetooth">
-        <div class="info">
-          <h3>Écouteurs Bluetooth</h3>
-          <p class="price">À partir de 12 000 FCFA</p>
-          <p class="desc">Son clair + réduction de bruit.</p>
-        </div>
-        <div class="actions">
-          <a class="btn" href="https://wa.me/22870833390?text=%C3%89couteurs%20Bluetooth%20voulus%20chez%202S" target="_blank" rel="noopener">Acheter WhatsApp</a>
-          <a class="btn" href="#contact">Détails</a>
-        </div>
-      </article>
-
-      <!-- Desktop -->
-      <article class="card" data-category="desktop" data-keywords="pc de bureau all in one">
-        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="PC Bureau">
-        <div class="info">
-          <h3>PC de Bureau</h3>
-          <p class="price">À partir de 130 000 FCFA</p>
-          <p class="desc">Polyvalent pour travail et loisirs.</p>
-        </div>
-        <div class="actions">
-          <a class="btn" href="https://wa.me/22870833390?text=PC%20de%20bureau%20chez%202S" target="_blank" rel="noopener">Acheter WhatsApp</a>
-          <a class="btn" href="#contact">Détails</a>
-        </div>
-      </article>
-
-      <!-- Accessories -->
-      <article class="card" data-category="accessories" data-keywords="chargeur coque cable powerbank">
-        <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?q=80&w=1200&auto=format&fit=crop" alt="Accessoires">
-        <div class="info">
-          <h3>Accessoires</h3>
-          <p class="price">Dès 2 500 FCFA</p>
-          <p class="desc">Coques, câbles, chargeurs, powerbanks…</p>
-        </div>
-        <div class="actions">
-          <a class="btn" href="https://wa.me/22870833390?text=Je%20cherche%20des%20accessoires%20chez%202S" target="_blank" rel="noopener">Acheter WhatsApp</a>
-          <a class="btn" href="#contact">Détails</a>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services" class="section">
-    <h2>Nos Services</h2>
-    <div class="grid services">
-      <div class="service">
-        <i class="fas fa-tools"></i>
+<section id="services" class="section">
+  <h2>Nos Services</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="info">
         <h3>Réparation PC</h3>
         <p>Maintenance, optimisation, remplacement de pièces (rapide et garanti).</p>
       </div>
-      <div class="service">
-        <i class="fas fa-mobile-alt"></i>
+    </div>
+    <div class="card">
+      <div class="info">
         <h3>Réparation Téléphones</h3>
         <p>Écran, batterie, flash, bypass iPhone, données (confidentiel).</p>
       </div>
-      <div class="service">
-        <i class="fas fa-shield-alt"></i>
-        <h3>Diagnostic & Devis</h3>
-        <p>Diagnostic express + devis gratuit sur WhatsApp.</p>
-      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT / FOOTER -->
-  <footer id="contact">
-    <p>&copy; 2025 2S Business • Tous droits réservés</p>
-    <p>📞 <a href="tel:+22870833390">70833390</a> • ✉️ <a href="mailto:msouleman28@gmail.com">msouleman28@gmail.com</a></p>
-    <p>💬 WhatsApp : <a href="https://wa.me/22870833390" target="_blank" rel="noopener">Cliquez ici</a></p>
-  </footer>
+<footer id="contact">
+  <p>&copy; 2025 2S Business • Tous droits réservés</p>
+  <p>📞 <a href="tel:+22870833390">70833390</a> • ✉️ <a href="mailto:msouleman28@gmail.com">msouleman28@gmail.com</a></p>
+  <p>💬 WhatsApp : <a href="https://wa.me/22870833390" target="_blank">Cliquez ici</a></p>
+</footer>
 
-  <!-- WhatsApp floating button -->
-  <a class="wa-float" href="https://wa.me/22870833390" target="_blank" aria-label="WhatsApp 2S">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <script>
-    /* ===== Slider simple ===== */
-    const slides = document.getElementById('slides');
-    const dotsWrap = document.getElementById('dots');
-    const total = slides.children.length;
-    let current = 0, auto;
-
-    // create dots
-    [...Array(total)].forEach((_,i)=>{
-      const b=document.createElement('button');
-      b.className='dot'+(i===0?' active':'');
-      b.addEventListener('click',()=>go(i));
-      dotsWrap.appendChild(b);
-    });
-
-    function go(i){
-      current=i;
-      slides.style.transform=`translateX(-${100*i}%)`;
-      [...dotsWrap.children].forEach((d,idx)=>d.classList.toggle('active',idx===i));
-      resetAuto();
-    }
-    function next(){ go((current+1)%total); }
-    function resetAuto(){
-      clearInterval(auto);
-      auto=setInterval(next,5000);
-    }
-    resetAuto();
-
-    /* ===== Recherche + Filtre catégories ===== */
-    const searchInput = document.getElementById('searchInput');
-    const categoryFilter = document.getElementById('categoryFilter');
-    const clearBtn = document.getElementById('clearFilters');
-    const cards = [...document.querySelectorAll('#productGrid .card')];
-
-    function applyFilters(){
-      const q = (searchInput.value || '').toLowerCase().trim();
-      const cat = categoryFilter.value;
-
-      cards.forEach(card=>{
-        const text = (card.innerText + ' ' + (card.dataset.keywords||'')).toLowerCase();
-        const matchText = !q || text.includes(q);
-        const matchCat = cat==='all' || (card.dataset.category===cat);
-        card.style.display = (matchText && matchCat) ? '' : 'none';
-      });
-    }
-    searchInput.addEventListener('input', applyFilters);
-    categoryFilter.addEventListener('change', applyFilters);
-    clearBtn.addEventListener('click', ()=>{
-      searchInput.value=''; categoryFilter.value='all'; applyFilters();
-    });
-
-    // run once on load
-    applyFilters();
-  </script>
+<a class="wa-float" href="https://wa.me/22870833390" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
