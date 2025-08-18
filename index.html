@@ -1,67 +1,159 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2S Business - Réparation & Services</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>2S Business – Téléchargements FRP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#333; }
-    header { background:#222; color:white; padding:20px; text-align:center; }
-    header img { max-width:120px; display:block; margin:0 auto 10px; }
-    nav { background:#444; padding:10px; text-align:center; }
-    nav a { color:white; text-decoration:none; margin:0 15px; font-weight:bold; }
-    nav a:hover { color:#ff5722; }
-    section { max-width:900px; margin:30px auto; padding:20px; background:white; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
-    h2 { color:#d32f2f; border-bottom:2px solid #d32f2f; padding-bottom:5px; }
-    footer { text-align:center; padding:15px; background:#222; color:white; margin-top:20px; }
+    :root{
+      --primary:#ff0000;
+      --primary-dark:#cc0000;
+      --bg:#f5f5f5;
+      --text:#333;
+      --black:#000;
+      --white:#fff;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Roboto',sans-serif}
+
+    .topbar{
+      position:sticky;top:0;z-index:1000;
+      background:var(--black);color:var(--white);
+      display:flex;align-items:center;gap:16px;
+      padding:10px 16px;border-bottom:1px solid #111;
+    }
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{height:44px}
+    .brand .name{font-family:'Oswald',sans-serif;font-size:20px;letter-spacing:.5px}
+
+    .nav{margin-left:auto;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .nav a{color:var(--white);text-decoration:none;font-weight:700;font-size:14px}
+    .nav a:hover{color:var(--primary)}
+
+    .section{max-width:1200px;margin:28px auto;padding:0 16px}
+    .section h2{font-family:'Oswald',sans-serif;margin:0 0 14px;font-size:26px}
+
+    .grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+
+    .card{
+      background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06);overflow:hidden;display:flex;flex-direction:column;
+      text-align:center;
+    }
+    .card img{width:100%;height:170px;object-fit:cover}
+    .card .info{padding:12px}
+    .card h3{margin:4px 0 6px;font-size:18px;color:var(--primary)}
+    .card .actions{margin-top:auto;padding:12px;border-top:1px solid #eee;display:flex;gap:10px}
+    .card .actions a{flex:1;text-align:center;text-decoration:none;color:#fff;background:var(--primary);padding:10px;border-radius:6px;font-weight:700}
+    .card .actions a:hover{background:var(--primary-dark)}
+
+    footer{background:var(--black);color:#ccc;margin-top:28px;padding:18px 16px;text-align:center}
+    footer a{color:var(--primary);text-decoration:none}
+    footer a:hover{color:var(--primary-dark)}
+
+    .wa-float{position:fixed;right:14px;bottom:14px;z-index:999;background:#25D366;color:#fff;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.2);font-size:26px}
   </style>
 </head>
 <body>
 
-<header>
-  <img src="logo2s.png" alt="Logo 2S Business">
-  <h1>2S Business</h1>
-  <p>Réparation de téléphones & ordinateurs</p>
-</header>
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="brand">
+      <img src="images/logo-2s-tech.png" alt="2S Business">
+      <div class="name">2S BUSINESS</div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a href="#downloads">Téléchargements FRP</a>
+      <a href="#links">Liens utiles</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<nav>
-  <a href="#accueil">Accueil</a>
-  <a href="#apropos">À propos</a>
-  <a href="#services">Services</a>
-  <a href="frp.html">Téléchargements FRP</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <!-- FRP Downloads -->
+  <section id="downloads" class="section">
+    <h2>📥 Téléchargements FRP</h2>
+    <div class="grid">
+      <article class="card">
+        <img src="https://via.placeholder.com/300x170?text=FRP+Bypass" alt="FRP Bypass APK">
+        <div class="info">
+          <h3>FRP Bypass APK</h3>
+        </div>
+        <div class="actions">
+          <a href="downloads/frpbypass.apk" download>Télécharger</a>
+        </div>
+      </article>
 
-<section id="accueil">
-  <h2>🏠 Accueil</h2>
-  <p>Bienvenue sur <strong>2S Business</strong>. Nous réparons vos téléphones et ordinateurs rapidement avec des pièces de qualité.</p>
-</section>
+      <article class="card">
+        <img src="https://via.placeholder.com/300x170?text=Quick+Shortcut" alt="Quick Shortcut Maker">
+        <div class="info">
+          <h3>Quick Shortcut Maker</h3>
+        </div>
+        <div class="actions">
+          <a href="downloads/quickshortcut.apk" download>Télécharger</a>
+        </div>
+      </article>
 
-<section id="apropos">
-  <h2>ℹ️ À propos</h2>
-  <p><strong>2S Business</strong>, c’est l’expérience et le savoir-faire dans la maintenance informatique et la réparation mobile. Notre priorité est la satisfaction du client.</p>
-</section>
+      <article class="card">
+        <img src="https://via.placeholder.com/300x170?text=HushSMS" alt="HushSMS">
+        <div class="info">
+          <h3>HushSMS APK</h3>
+        </div>
+        <div class="actions">
+          <a href="downloads/hushsms.apk" download>Télécharger</a>
+        </div>
+      </article>
+    </div>
+  </section>
 
-<section id="services">
-  <h2>🛠️ Nos Services</h2>
-  <ul>
-    <li>✔️ Réparation de téléphones Android et iPhone</li>
-    <li>✔️ Déblocage & optimisation des appareils</li>
-    <li>✔️ Réparation d’ordinateurs portables et PC</li>
-    <li>✔️ Vente d’accessoires et pièces détachées</li>
-  </ul>
-</section>
+  <!-- External Links -->
+  <section id="links" class="section">
+    <h2>🔗 Liens utiles</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="info">
+          <h3>VNROM</h3>
+          <p>Outils Bypass FRP</p>
+        </div>
+        <div class="actions">
+          <a href="https://vnrom.net/bypass/" target="_blank" rel="noopener">Visiter</a>
+        </div>
+      </article>
 
-<section id="contact">
-  <h2>📞 Contact</h2>
-  <p>☎️ Téléphone : +228 90 00 00 00</p>
-  <p>📧 Email : contact@2sbusiness.com</p>
-  <p>📍 Adresse : Lomé, Togo</p>
-</section>
+      <article class="card">
+        <div class="info">
+          <h3>FRPFile</h3>
+          <p>Applications FRP</p>
+        </div>
+        <div class="actions">
+          <a href="https://frpfile.com/" target="_blank" rel="noopener">Visiter</a>
+        </div>
+      </article>
 
-<footer>
-  <p>© 2025 2S Business - Tous droits réservés</p>
-</footer>
+      <article class="card">
+        <div class="info">
+          <h3>GSMXT</h3>
+          <p>Applications FRP</p>
+        </div>
+        <div class="actions">
+          <a href="https://gsmxt.com/" target="_blank" rel="noopener">Visiter</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact">
+    <p>&copy; 2025 2S Business • Tous droits réservés</p>
+    <p>📞 <a href="tel:+22870833390">70833390</a> • ✉️ <a href="mailto:msouleman28@gmail.com">msouleman28@gmail.com</a></p>
+    <p>💬 WhatsApp : <a href="https://wa.me/22870833390" target="_blank" rel="noopener">Cliquez ici</a></p>
+  </footer>
+
+  <!-- WhatsApp floating button -->
+  <a class="wa-float" href="https://wa.me/22870833390" target="_blank" aria-label="WhatsApp 2S">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
 </body>
 </html>
